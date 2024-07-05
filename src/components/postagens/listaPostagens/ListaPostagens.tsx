@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
+import { Circles } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Postagem from '../../../models/Postagem';
@@ -44,14 +44,17 @@ function ListaPostagens() {
   return (
     <>
       {postagens.length === 0 && (
-        <Dna
-          visible={true}
-          height="200"
+        <div className='flex justify-center'>
+        <Circles
+          height="700"
           width="200"
-          ariaLabel="dna-loading"
+          color="#facc15"
+          ariaLabel="circles-loading"
           wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
+          wrapperClass=""
+          visible={true}
         />
+        </div>
       )}
       <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {postagens.map((postagem) => (

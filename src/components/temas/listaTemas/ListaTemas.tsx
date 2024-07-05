@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
+import { Circles } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
@@ -38,17 +38,21 @@ function ListaTemas() {
   useEffect(() => {
     buscarTemas();
   }, [temas.length]);
+
   return (
     <>
       {temas.length === 0 && (
-        <Dna
-          visible={true}
-          height="200"
+        <div className='flex justify-center'>
+        <Circles
+          height="700"
           width="200"
-          ariaLabel="dna-loading"
+          color="#facc15"
+          ariaLabel="circles-loading"
           wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
+          wrapperClass=""
+          visible={true}
         />
+        </div>
       )}
       <div className="flex justify-center w-full my-4">
         <div className="container flex flex-col">
